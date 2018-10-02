@@ -3,7 +3,7 @@ var date = require('./datemodule');
 
 var botID = process.env.BOT_ID;
 
-var aboutbotto = "Hi! My name is botto. I heard my name mentioned so I just thought I'd say Hi. I can't do much yet, I can tell the time, identify memes, but I'm working hard on learning. Go Coogs!"
+var aboutbotto = "Hi! I heard my name mentioned so I just thought I'd say Hi. I can't do much yet, I can tell the time, identify memes, but I'm working hard on learning. Go Coogs!"
 
 
 
@@ -17,7 +17,7 @@ function respond() {
 
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
-    postMessage();
+    postMessage(date);
     this.res.end();
   } 
   else if(request.text && AboutBottoRegex.test(request.text)) {
