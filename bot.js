@@ -3,15 +3,23 @@ var date = require('./datemodule');
 
 var botID = process.env.BOT_ID;
 
+var aboutbotto = "Hi! My name is botto. I heard my name mentioned so I just thought I'd say Hi. I can't do much yet, I can tell the time, identify memes, but I'm working hard on learning. Go Coogs!"
+
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /what time is it/i;
+      botRegex = /what time is it/i; AboutBottoRegex = /botto/i;
 
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
     postMessage();
     this.res.end();
-  } else {
+  } 
+  else if(request.text && AboutBottoRegex.test(request.text)) {
+  	this.res.writeHead(200);
+  	postMessage(aboutbotto);
+  	this.res.end()
+  }
+  else {
     console.log("don't care");
     this.res.writeHead(200);
     this.res.end();
