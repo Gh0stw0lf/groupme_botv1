@@ -5,6 +5,12 @@ var botID = process.env.BOT_ID;
 
 var aboutbotto = "Hi! My name is botto. I heard my name mentioned so I just thought I'd say Hi. I can't do much yet, I can tell the time, identify memes, but I'm working hard on learning. Go Coogs!"
 
+
+
+function aboutbottomsg() {
+  	return aboutbotto
+  }
+
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /what time is it/i; AboutBottoRegex = /botto/i;
@@ -26,10 +32,10 @@ function respond() {
   }
 }
 
-function postMessage() {
+function postMessage(response) {
   var botResponse, options, body, botReq;
 
-  botResponse = date.myDateTime();
+  botResponse = response
 
   options = {
     hostname: 'api.groupme.com',
@@ -41,9 +47,7 @@ function postMessage() {
     "bot_id" : botID,
     "text" : botResponse
   };
-  function aboutbottomsg() {
-  	return aboutbotto
-  }
+
 
   console.log('sending ' + botResponse + ' to ' + botID);
 
