@@ -4,7 +4,7 @@ var date = require('./datemodule');
 var botID = process.env.BOT_ID;
 
 var aboutbotto = "Hi! I heard my name mentioned so I just thought I'd say Hi. I can't do much yet, I can tell the time, identify memes, but I'm working hard on learning. Go Coogs!"
-var footballmsg = "YA WOO COUGAR FOOTBAL!"
+var footballmsg = "YA WOO COUGAR FOOTBALL!"
 
 
 function aboutbottomsg() {
