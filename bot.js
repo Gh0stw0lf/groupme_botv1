@@ -11,7 +11,7 @@ function aboutbottomsg() {
   	return aboutbotto
   }
 
-function footballmsg() {
+function football() {
 	return footballmsg
 }
 
@@ -31,7 +31,7 @@ function respond() {
   }
   else if(request.text && footballregex.test(request.text)) {
   	this.res.writeHead(200);
-  	postMessage(footballmsg())
+  	postMessage(football());
   	this.res.end()
   }
   else {
