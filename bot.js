@@ -16,7 +16,7 @@ function respond() {
   } 
   else if(request.text && AboutBottoRegex.test(request.text)) {
   	this.res.writeHead(200);
-  	postMessage(aboutbotto);
+  	postMessage(aboutbottomsg());
   	this.res.end()
   }
   else {
@@ -41,6 +41,9 @@ function postMessage() {
     "bot_id" : botID,
     "text" : botResponse
   };
+  function aboutbottomsg() {
+  	return aboutbotto
+  }
 
   console.log('sending ' + botResponse + ' to ' + botID);
 
