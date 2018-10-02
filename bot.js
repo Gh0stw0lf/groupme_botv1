@@ -4,16 +4,20 @@ var date = require('./datemodule');
 var botID = process.env.BOT_ID;
 
 var aboutbotto = "Hi! I heard my name mentioned so I just thought I'd say Hi. I can't do much yet, I can tell the time, identify memes, but I'm working hard on learning. Go Coogs!"
-
+var footballmsg = "YA WOO COUGAR FOOTBALL"
 
 
 function aboutbottomsg() {
   	return aboutbotto
   }
 
+function footballmsg() {
+	return footballmsg
+}
+
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /what time is it/i; AboutBottoRegex = /botto/i;
+      botRegex = /what time is it/i; AboutBottoRegex = /botto/i; footballregex = /football/i;
 
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
@@ -23,6 +27,11 @@ function respond() {
   else if(request.text && AboutBottoRegex.test(request.text)) {
   	this.res.writeHead(200);
   	postMessage(aboutbottomsg());
+  	this.res.end()
+  }
+  else if(request.text && footballregex.test(request.text)) {
+  	this.rest.writeHead(200);
+  	postMessage(footballmsg())
   	this.res.end()
   }
   else {
