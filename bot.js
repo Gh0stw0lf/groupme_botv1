@@ -30,7 +30,7 @@ function respond() {
   	this.res.end()
   }
   else if(request.text && footballregex.test(request.text)) {
-  	this.rest.writeHead(200);
+  	this.res.writeHead(200);
   	postMessage(footballmsg())
   	this.res.end()
   }
